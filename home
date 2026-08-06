@@ -1,1 +1,13 @@
+<style>
+@font-face {
+  font-family: "BasteleurBold";
+  src: url("Basteleur-Bold.woff2") format("woff2"),
+       url("Basteleur-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+</style>
 
+<h1 style="font-family: 'BasteleurBold';">
+  Evil Girls Portfolio
+</h1>
