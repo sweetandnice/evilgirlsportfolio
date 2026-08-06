@@ -13,8 +13,20 @@
   font-weight: bold;
   font-style: normal;
 }
+
+h1 {
+  font-family: "BasteleurBold";
+  font-weight: bold;
+}
 </style>
 
-<h1 style="font-family: 'BasteleurBold';">
-  Evil Girls Portfolio
-</h1>
+</head>
+
+<body>
+
+<h1>Evil Girls Portfolio</h1>
+
+</body>
+</html>
+
+
