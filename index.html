@@ -23,7 +23,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #f2db85;
   margin: 0;
   padding: 0;
 }
@@ -33,13 +33,38 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  animation: flicker-desktop 0.8s infinite;
   content: url("headers/desktop_header1.png");
+}
+
+/* Desktop flicker animation */
+@keyframes flicker-desktop {
+  0%   { content: url("headers/desktop_header1.png"); }
+  10%  { content: url("headers/desktop_header2.png"); }
+  25%  { content: url("headers/desktop_header1.png"); }
+  40%  { content: url("headers/desktop_header2.png"); }
+  55%  { content: url("headers/desktop_header2.png"); }
+  70%  { content: url("headers/desktop_header1.png"); }
+  85%  { content: url("headers/desktop_header2.png"); }
+  100% { content: url("headers/desktop_header1.png"); }
 }
 
 /* Mobile override */
 @media (max-width: 768px) {
   .header-img {
+    animation: flicker-mobile 0.8s infinite;
     content: url("headers/mobile_header1.png");
+  }
+
+  @keyframes flicker-mobile {
+    0%   { content: url("headers/mobile_header1.png"); }
+    15%  { content: url("headers/mobile_header2.png"); }
+    30%  { content: url("headers/mobile_header1.png"); }
+    45%  { content: url("headers/mobile_header2.png"); }
+    60%  { content: url("headers/mobile_header2.png"); }
+    75%  { content: url("headers/mobile_header1.png"); }
+    90%  { content: url("headers/mobile_header2.png"); }
+    100% { content: url("headers/mobile_header1.png"); }
   }
 }
 </style>
