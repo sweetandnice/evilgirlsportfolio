@@ -6,57 +6,50 @@
 <title>Evil Girls Portfolio</title>
 
 <style>
-@font-face {
-  font-family: "BasteleurBold";
-  src: url("webfonts/Basteleur-Bold.woff2") format("woff2"),
-       url("webfonts/Basteleur-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "FT88Gothique";
-  src: url("webfonts/FT88-Gothique.otf") format("opentype"),
-       url("webfonts/FT88-Gothique.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  background-color: #f2db85;
+  background-color: black;
   margin: 0;
   padding: 0;
 }
 
-/* HEADER GRID — DESKTOP */
+/* GRID LAYOUT — DESKTOP */
 .header {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
   align-items: center;
 }
 
-/* TEXT IMAGES (header1 + header2) */
-.header-text {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.header-text img {
+/* FLICKERING TEXT HEADER */
+.header-flicker {
   width: 100%;
   height: auto;
+  display: block;
+  animation: flicker-text 0.8s infinite alternate;
+  content: url("headers/header1.png");
 }
 
-/* CLICKABLE EYE IMAGES */
-.header-eyes {
+/* TEXT FLICKER ANIMATION */
+@keyframes flicker-text {
+  0%   { content: url("headers/header1.png"); }
+  15%  { content: url("headers/header2.png"); }
+  30%  { content: url("headers/header1.png"); }
+  45%  { content: url("headers/header2.png"); }
+  60%  { content: url("headers/header2.png"); }
+  75%  { content: url("headers/header1.png"); }
+  90%  { content: url("headers/header2.png"); }
+  100% { content: url("headers/header1.png"); }
+}
+
+/* EYE BUTTONS */
+.eye-row {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
-.header-eyes img {
+.eye-row img {
   width: 100%;
   height: auto;
   cursor: pointer;
@@ -69,12 +62,13 @@ body {
     text-align: center;
   }
 
-  .header-eyes {
+  .eye-row {
     flex-direction: row;
     justify-content: center;
+    gap: 10px;
   }
 
-  .header-eyes img {
+  .eye-row img {
     width: 45%;
   }
 }
@@ -86,14 +80,11 @@ body {
 
 <div class="header">
 
-  <!-- TEXT IMAGES -->
-  <div class="header-text">
-    <img src="headers/header1.png" alt="Header Text 1">
-    <img src="headers/header2.png" alt="Header Text 2">
-  </div>
+  <!-- FLICKERING TEXT -->
+  <img class="header-flicker">
 
   <!-- CLICKABLE EYE BUTTONS -->
-  <div class="header-eyes">
+  <div class="eye-row">
     <a href="LINK1">
       <img src="headers/mc_eye.png" alt="MC Eye">
     </a>
