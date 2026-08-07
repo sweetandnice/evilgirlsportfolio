@@ -24,28 +24,44 @@
 
 body {
   background-color: #f2db85;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-family: "BasteleurBold";
-  color: #2596be;
-  font-size: 48px;
+/* Desktop header default */
+.header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: flicker 1s infinite alternate;
+  content: url("headers/desktop_header1.png");
 }
 
-h2 {
-  font-family: "FT88Gothique";
-  font-size: 20px;
-  color: #2596be;
-  margin-top: 6px;
+/* Flicker animation swaps between two desktop images */
+@keyframes flicker {
+  0% { content: url("headers/desktop_header1.png"); }
+  100% { content: url("headers/desktop_header2.png"); }
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .header-img {
+    animation: flicker-mobile 1s infinite alternate;
+    content: url("headers/mobile_header1.png");
+  }
+
+  @keyframes flicker-mobile {
+    0% { content: url("headers/mobile_header1.png"); }
+    100% { content: url("headers/mobile_header2.png"); }
+  }
 }
 </style>
 
 </head>
 
 <body>
-<h1>Evil Girls Portfolio</h1>
-<h2>Beauty is pain :(</h2>
-<img src="photos/mega wispy.webp" alt="Mega Wispy" style="max-width:400px;">
+
+<img class="header-img">
 
 </body>
 </html>
