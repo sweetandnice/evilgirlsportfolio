@@ -23,48 +23,59 @@
 }
 
 body {
-  background-color: black;
+  background-color: #f2db85;
   margin: 0;
   padding: 0;
 }
 
-/* Default: desktop header */
-.header-img {
+/* HEADER GRID — DESKTOP */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+/* TEXT IMAGES (header1 + header2) */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header-text img {
   width: 100%;
   height: auto;
-  display: block;
-  animation: flicker-desktop 0.8s infinite;
-  content: url("headers/desktop_header1.png");
 }
 
-/* Desktop flicker animation */
-@keyframes flicker-desktop {
-  0%   { content: url("headers/desktop_header1.png"); }
-  10%  { content: url("headers/desktop_header2.png"); }
-  25%  { content: url("headers/desktop_header1.png"); }
-  40%  { content: url("headers/desktop_header2.png"); }
-  55%  { content: url("headers/desktop_header2.png"); }
-  70%  { content: url("headers/desktop_header1.png"); }
-  85%  { content: url("headers/desktop_header2.png"); }
-  100% { content: url("headers/desktop_header1.png"); }
+/* CLICKABLE EYE IMAGES */
+.header-eyes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Mobile override */
+.header-eyes img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* MOBILE LAYOUT */
 @media (max-width: 768px) {
-  .header-img {
-    animation: flicker-mobile 0.8s infinite;
-    content: url("headers/mobile_header1.png");
+  .header {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  @keyframes flicker-mobile {
-    0%   { content: url("headers/mobile_header1.png"); }
-    15%  { content: url("headers/mobile_header2.png"); }
-    30%  { content: url("headers/mobile_header1.png"); }
-    45%  { content: url("headers/mobile_header2.png"); }
-    60%  { content: url("headers/mobile_header2.png"); }
-    75%  { content: url("headers/mobile_header1.png"); }
-    90%  { content: url("headers/mobile_header2.png"); }
-    100% { content: url("headers/mobile_header1.png"); }
+  .header-eyes {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .header-eyes img {
+    width: 45%;
   }
 }
 </style>
@@ -73,7 +84,26 @@ body {
 
 <body>
 
-<img class="header-img">
+<div class="header">
+
+  <!-- TEXT IMAGES -->
+  <div class="header-text">
+    <img src="headers/header1.png" alt="Header Text 1">
+    <img src="headers/header2.png" alt="Header Text 2">
+  </div>
+
+  <!-- CLICKABLE EYE BUTTONS -->
+  <div class="header-eyes">
+    <a href="LINK1">
+      <img src="headers/mc_eye.png" alt="MC Eye">
+    </a>
+
+    <a href="LINK2">
+      <img src="headers/hd_eye.png" alt="HD Eye">
+    </a>
+  </div>
+
+</div>
 
 </body>
 </html>
