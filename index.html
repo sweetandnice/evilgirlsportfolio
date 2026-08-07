@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">  
 <head>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evil Girls Portfolio</title>
 
@@ -23,31 +23,23 @@
 }
 
 body {
-  background-color: #f2db85;
+  background-color: black;
   margin: 0;
   padding: 0;
 }
 
-/* Desktop header default */
+/* Default: desktop header */
 .header-img {
   width: 100%;
   height: auto;
   display: block;
-  animation: flicker 1s infinite alternate;
   content: url("headers/desktop_header1.png");
 }
-
 
 /* Mobile override */
 @media (max-width: 768px) {
   .header-img {
-    animation: flicker-mobile 1s infinite alternate;
     content: url("headers/mobile_header1.png");
-  }
-
-  @keyframes flicker-mobile {
-    0% { content: url("headers/mobile_header1.png"); }
-    100% { content: url("headers/mobile_header2.png"); }
   }
 }
 </style>
