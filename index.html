@@ -12,10 +12,10 @@ body {
   padding: 0;
 }
 
-/* GRID LAYOUT — DESKTOP */
+/* DESKTOP GRID */
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr; /* TEXT gets 55%, EYES get 45% */
   gap: 20px;
   padding: 20px;
   align-items: center;
@@ -45,12 +45,12 @@ body {
 /* EYE BUTTONS */
 .eye-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; 
   gap: 20px;
 }
 
 .eye-row img {
-  width: 100%;
+  width: 50%; 
   height: auto;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ body {
   }
 
   .eye-row img {
-    width: 45%;
+    width: 48%; 
   }
 }
 </style>
@@ -83,7 +83,7 @@ body {
   <!-- FLICKERING TEXT -->
   <img class="header-flicker">
 
-  <!-- CLICKABLE EYE BUTTONS -->
+  <!-- EYE BUTTONS -->
   <div class="eye-row">
     <a href="LINK1">
       <img src="headers/mc_eye.png" alt="MC Eye">
