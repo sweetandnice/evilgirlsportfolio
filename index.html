@@ -12,10 +12,10 @@ body {
   padding: 0;
 }
 
-/* DESKTOP GRID */
+/* DESKTOP GRID — FIXED WIDTHS */
 .header {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* TEXT gets 55%, EYES get 45% */
+  grid-template-columns: 1fr 1fr; /* equal width columns */
   gap: 20px;
   padding: 20px;
   align-items: center;
@@ -42,20 +42,20 @@ body {
   100% { content: url("headers/header1.png"); }
 }
 
-/* EYE BUTTONS */
+/* EYE BUTTONS — DESKTOP FIX */
 .eye-row {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   gap: 20px;
 }
 
 .eye-row img {
-  width: 50%; 
+  width: 100%; 
   height: auto;
   cursor: pointer;
 }
 
-/* MOBILE LAYOUT */
+/* MOBILE LAYOUT — FIXED SIZING */
 @media (max-width: 768px) {
   .header {
     grid-template-columns: 1fr;
@@ -69,7 +69,7 @@ body {
   }
 
   .eye-row img {
-    width: 48%; 
+    width: 48%;
   }
 }
 </style>
@@ -83,7 +83,7 @@ body {
   <!-- FLICKERING TEXT -->
   <img class="header-flicker">
 
-  <!-- EYE BUTTONS -->
+  <!-- CLICKABLE EYE BUTTONS -->
   <div class="eye-row">
     <a href="LINK1">
       <img src="headers/mc_eye.png" alt="MC Eye">
