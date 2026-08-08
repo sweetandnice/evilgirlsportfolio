@@ -56,28 +56,32 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .header {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 4px;        /* tighter spacing */
+    padding: 6px;    /* tighter padding */
   }
 
+  /* TEXT: slightly smaller so it doesn't crop */
   .header-flicker {
-    transform: scale(0.94); /* slightly smaller text */
-    margin-bottom: 4px;     /* tighter spacing */
+    transform: scale(0.90); /* reduce size */
+    margin-bottom: 6px;     /* small gap */
   }
 
+  /* EYES: bigger and balanced */
   .eye-row {
     flex-direction: row;
     justify-content: center;
-    gap: 6px; /* tighter gap */
+    gap: 8px; /* small gap */
   }
 
   .eye-row img {
-    width: 52%; /* slightly bigger eyes */
+    width: 56%;   /* BIGGER EYES */
     height: auto;
   }
 }
-
 
 </style>
 
