@@ -12,10 +12,10 @@ body {
   padding: 0;
 }
 
-/* DESKTOP GRID — FIXED WIDTHS */
+/* DESKTOP GRID */
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* equal width columns */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
   align-items: center;
@@ -42,7 +42,7 @@ body {
   100% { content: url("headers/header1.png"); }
 }
 
-/* EYE BUTTONS — DESKTOP FIX */
+/* EYE BUTTONS — DESKTOP */
 .eye-row {
   display: flex;
   flex-direction: row;
@@ -50,12 +50,12 @@ body {
 }
 
 .eye-row img {
-  width: 100%; 
+  width: 100%;
   height: auto;
   cursor: pointer;
 }
 
-/* MOBILE LAYOUT — FIXED SIZING */
+/* MOBILE FIX — MAKE EYES FULL WIDTH */
 @media (max-width: 768px) {
   .header {
     grid-template-columns: 1fr;
@@ -63,13 +63,18 @@ body {
   }
 
   .eye-row {
+    width: 100vw;        /* full screen width */
+    margin-left: calc(-50vw + 50%); 
+    display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
 
+  /* MAKE EACH EYE IMAGE BIG */
   .eye-row img {
-    width: 48%;
+    width: 48vw;   /* each eye takes half the screen */
+    height: auto;
   }
 }
 </style>
